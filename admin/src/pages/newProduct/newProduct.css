@@ -1,0 +1,81 @@
+.newProduct {
+  flex: 4;
+  padding-left: 20px;
+}
+
+.addProductForm {
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  gap: 10rem;
+}
+
+.addProductItem {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.addProductItem > label {
+  color: gray;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.addProductItem > input {
+  padding: 10px;
+}
+
+.addProductItem > select {
+  padding: 10px;
+}
+
+.addProductButton {
+  padding: 7px 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: darkblue;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addProductButton:hover {
+  background-color: rgb(2, 2, 27);
+  transition: all 0.2s ease-in-out;
+}
+
+.addProductButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.checkbox {
+  display: flex;
+  gap: 10px;
+}
+
+.colors {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.avaibleColor {
+  padding: 3px;
+  background-color: rgb(203, 199, 199);
+  border-radius: 4px;
+}
+
+.productImg {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-top: 30px;
+}
