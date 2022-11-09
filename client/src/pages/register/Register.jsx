@@ -30,7 +30,7 @@ const Register = ({ setShowRegister, setShowLogin }) => {
       setIsFatching(false);
     } else {
       try {
-        const res = await publicRequest.post("auth/register", newUser);
+        await publicRequest.post("auth/register", newUser);
         setShowRegister(false);
         setShowLogin(true);
       } catch (err) {

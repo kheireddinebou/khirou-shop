@@ -4,6 +4,7 @@ import { CartContext } from "../../context/CartContext/CartContext";
 import { UserContext } from "../../context/UserContext/UserContext";
 import { publicRequest } from "../../requestMethods";
 import Login from "../login/Login";
+import Register from "../register/Register";
 import {
   AddBtn,
   Container,
@@ -25,6 +26,8 @@ const Product = () => {
   const [size, setSize] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
+
   const { id } = useParams();
   const { dispatch } = useContext(CartContext);
   const { currentUser } = useContext(UserContext);
@@ -60,7 +63,15 @@ const Product = () => {
 
   return (
     <Container>
-      {showLogin && <Login setShowLogin={setShowLogin} />}
+      {showRegister && (
+        <Register
+          setShowRegister={setShowRegister}
+          setShowLogin={setShowLogin}
+        />
+      )}
+      {showLogin && (
+        <Login setShowRegister={setShowRegister} setShowLogin={setShowLogin} />
+      )}
       <ProductImg src={product.img} alt={product.title} />
       <Info>
         <ProductName>{product.title}</ProductName>

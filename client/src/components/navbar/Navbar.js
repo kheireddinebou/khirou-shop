@@ -30,7 +30,12 @@ const Navbar = () => {
 
   return (
     <>
-      {showRegister && <Register setShowRegister={setShowRegister} />}
+      {showRegister && (
+        <Register
+          setShowLogin={setShowLogin}
+          setShowRegister={setShowRegister}
+        />
+      )}
       {showLogin && (
         <Login setShowRegister={setShowRegister} setShowLogin={setShowLogin} />
       )}
