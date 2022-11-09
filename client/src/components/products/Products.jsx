@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { publicRequest } from "../../requestMethods";
 import Product from "../product/Product";
 import { Container } from "./products-styles";
-import axios from "axios";
 
 const Products = ({ filter, category, sort }) => {
   const [products, setProducts] = useState([]);
@@ -9,10 +9,8 @@ const Products = ({ filter, category, sort }) => {
 
   const getProducts = async () => {
     try {
-      const res = await axios.get(
-        category
-          ? `http://localhost:3005/api/product?category=${category}`
-          : "http://localhost:3005/api/product"
+      const res = await publicRequest.get(
+        category ? `product?category=${category}` : "product"
       );
       setProducts(res.data);
     } catch (error) {
